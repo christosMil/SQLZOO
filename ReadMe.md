@@ -1,4 +1,4 @@
-The following .sql files contain the answers to the questions of the SQLZOO's SQL Tutorial (http://sqlzoo.net/).
+The following .sql files contain the answers to the questions of the SQLZOO's MySQL Tutorial (http://sqlzoo.net/).
 Apart from the answers of the tutorials there are also the answers of the quizzes (in .txt format). It would be
 better for someone to attempt the quizzes by himself/herself and then check with the solutions. The same strategy
 should be followed with the tutorials' questions.
