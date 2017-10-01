@@ -1,0 +1,3 @@
+#Ignore answers in .txt format
+#Keep answers in .sql format
+*.txt
