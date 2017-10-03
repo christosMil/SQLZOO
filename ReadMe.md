@@ -9,13 +9,12 @@ in INNER JOINS].
 
 I did these SQL queries during my preperation for an introductory undergraduate course in 'Design and Use of
 Databases'. This series of tutorials provide a solid background in SQL so I found it a good starting point for
-experimentation and learning the basic SQL functions. However there other, even more complicated concepts that you
-might experience in MySQL (more complicated multiple table join, complex nested queries etc.), which you can dive
-into after finishing this tutorial.
+experimentation and learning the basic SQL functions. However there are other, even more complicated concepts that
+you might experience in MySQL (more complicated multiple table join, complex nested queries etc.), which you can
+dive into after finishing this tutorial.
 
 If someone is interested in learning more about SQL and Databases (DBs) in general, a good recommendation is
-'Fundamentals Of Database Systems
-' by Ramez Elmasri and Shamkant B. Navathe, which I found easy-to-read, very
+'Fundamentals Of Database Systems' by Ramez Elmasri and Shamkant B. Navathe, which I found easy-to-read, very
 explanatory, detailed and with numerous examples.
 
 If you would like to use some advice, from what our professor tought us, the best way to write SQL queries is to
