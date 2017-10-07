@@ -36,9 +36,9 @@ FROM world
 WHERE name = 'France' OR name = 'Germany' OR name='Italy';
 
 -- Alternate Solution:
-SELECT name, population
-FROM world
-WHERE name IN ('France', 'Germany', 'Italy');
+    SELECT name, population
+    FROM world
+    WHERE name IN ('France', 'Germany', 'Italy');
 
 
 -- 6. United
