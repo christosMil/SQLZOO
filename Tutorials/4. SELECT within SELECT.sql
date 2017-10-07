@@ -1,9 +1,9 @@
-#SELECT within SELECT
-#====================
+-- SELECT within SELECT
+-- ====================
 
 
-#1. Bigger than Russia
-#---------------------
+-- 1. Bigger than Russia
+-- ---------------------
 SELECT name
 FROM world
 WHERE population > (SELECT population
@@ -11,8 +11,8 @@ WHERE population > (SELECT population
                     WHERE name = 'Russia');
 
 
-#2. Richer than UK
-#-----------------
+-- 2. Richer than UK
+-- -----------------
 SELECT name
 FROM world
 WHERE continent = 'Europe' AND gdp/population > (SELECT gdp/population
@@ -20,8 +20,8 @@ WHERE continent = 'Europe' AND gdp/population > (SELECT gdp/population
                                                  WHERE name = 'United Kingdom');
 
 
-#3. Neighbours of Argentina and Australia
-#----------------------------------------
+-- 3. Neighbours of Argentina and Australia
+-- ----------------------------------------
 SELECT name, continent
 FROM world
 WHERE continent = (SELECT continent
@@ -32,8 +32,8 @@ WHERE continent = (SELECT continent
 ORDER BY name;
 
 
-#4. Between Canada and Poland
-#----------------------------
+-- 4. Between Canada and Poland
+-- ----------------------------
 SELECT name, population
 FROM world
 WHERE population > (SELECT population
@@ -43,15 +43,15 @@ WHERE population > (SELECT population
                                                              WHERE name = 'Poland');
 
 
-#5. Percentages of Germany
-#-------------------------
+-- 5. Percentages of Germany
+-- -------------------------
 SELECT name, CONCAT(ROUND(100*population/(SELECT population FROM world WHERE name = 'Germany'), 0), '%')
 FROM world
 WHERE continent = 'Europe';
 
 
-#6. Bigger than every country in Europe
-#--------------------------------------
+-- 6. Bigger than every country in Europe
+-- --------------------------------------
 SELECT name
 FROM world
 WHERE gdp > ALL (SELECT gdp
@@ -59,8 +59,8 @@ WHERE gdp > ALL (SELECT gdp
                  WHERE continent = 'Europe' AND gdp > 0);
 
 
-#7. Largest in each continent
-#----------------------------
+-- 7. Largest in each continent
+-- ----------------------------
 SELECT continent, name, area
 FROM world x
 WHERE area >= ALL (SELECT area
@@ -68,8 +68,8 @@ WHERE area >= ALL (SELECT area
                    WHERE y.continent = x.continent AND area > 0);
 
 
-#8. First country of each continent (alphabetically)
-#---------------------------------------------------
+-- 8. First country of each continent (alphabetically)
+-- ---------------------------------------------------
 SELECT continent, name
 FROM world x
 WHERE name <= ALL (SELECT name
@@ -77,12 +77,12 @@ WHERE name <= ALL (SELECT name
                    WHERE x.continent = y.continent);
 
 
-#Difficult Questions That Utilize Techniques Not Covered In Prior Sections
-#-------------------------------------------------------------------------
+-- Difficult Questions That Utilize Techniques Not Covered In Prior Sections
+-- -------------------------------------------------------------------------
 
-#9. Find the continents where all countries have a population <= 25000000. Then find the names
-#   of the countries associated with these continents. Show name, continent and population.
-#---------------------------------------------------------------------------------------------
+-- 9. Find the continents where all countries have a population <= 25000000. Then find the names
+--    of the countries associated with these continents. Show name, continent and population.
+-- ---------------------------------------------------------------------------------------------
 SELECT name, continent, population
 FROM world x
 WHERE 25000000 >= ALL (SELECT population
@@ -90,9 +90,9 @@ WHERE 25000000 >= ALL (SELECT population
                        WHERE x.continent = y.continent);
 
 
-#10. Some countries have populations more than three times that of any of their
-#    neighbours (in the same continent). Give the countries and continents.
-#------------------------------------------------------------------------------
+-- 10. Some countries have populations more than three times that of any of their
+--     neighbours (in the same continent). Give the countries and continents.
+-- ------------------------------------------------------------------------------
 SELECT name, continent
 FROM world x
 WHERE population >= ALL (SELECT 3*population
