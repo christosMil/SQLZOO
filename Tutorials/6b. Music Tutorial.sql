@@ -79,8 +79,8 @@ GROUP BY title
 ORDER BY COUNT(song) DESC, title ASC;
 
 -- Alternate solution:
-    SELECT title, COUNT(asin)
-    FROM album, track
-    WHERE asin = album
-    GROUP BY title
-    ORDER BY COUNT(asin) DESC, title ASC;
+	SELECT title, COUNT(asin)
+	FROM album, track
+	WHERE asin = album
+	GROUP BY title
+	ORDER BY COUNT(asin) DESC, title ASC
